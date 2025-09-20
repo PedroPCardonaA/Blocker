@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Close Porn Tabs",
+  "version": "0.2.0",
+  "description": "Blocks known domains and auto-closes tabs with porn content.",
+  "permissions": ["tabs", "storage", "declarativeNetRequest", "declarativeNetRequestWithHostAccess"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["content.js"], "run_at": "document_idle" }
+  ],
+  "action": { "default_title": "Auto Close Porn Tabs" },
+  "incognito": "spanning",
+  "applications": {
+      "gecko": {
+      "id": "autoclose-porn@local"
+        }
+      }
+  }
